@@ -1,18 +1,69 @@
-button.submit {
-    float: right;
+body {
+  background-image: url(../img/Start\ Page\ Background.jpg);
+  background-size: cover;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+.project-header-1 {
+  margin-top: 50px;
+  font-weight: 400;
+  color: #b24aea;
+}
+
+.project-header-2 {
+  margin-top: 50px;
+  font-weight: 400;
+  color: #599fff;
+}
+
+thead {
+  background-color: 	#f8f9fa;
+}
+
+/* tbody {
+background-color: 	#white;
+} */
+
+.urgency-level-high {
+  background-color: #f62b54;
+  color: white;
   }
-  
-  form#cms {
-    margin-top: 50px;
-  }
-  
-  #cms textarea {
-    resize: none;
-  }
-  
-  .card-header button.delete,
-  button.edit {
-    float: right;
-    margin: 5px;
-  }
-  
+.urgency-level-mild {
+background-color: #ffac2b;
+color: white;
+}
+
+.urgency-level-low {
+background-color: 	#18d068;
+color: white;
+}
+
+.projects-status-open {
+  background-color: #ffac2b;
+color: white;
+}
+
+.projects-status-completed {
+  background-color: #18d068;
+color: white;
+}
+
+/* .project-owner-emily {
+  background-image: url(../img/Headshot_EGA.jpg);
+  size: 10%;
+} */
+
+.fa-plus-square {
+  color: #18d068
+}
+
+.fa-minus-square {
+  color: #f62b54;
+}
+
+td, th {
+  background-color: white;
+}
