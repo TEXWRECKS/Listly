@@ -16,16 +16,16 @@ module.exports = function(sequelize, DataTypes) {
     },
     urgency: {
       type: DataTypes.STRING,
-      defaultValue: "Low"
+      defaultValue: "low"
     },
-    project_status: {
-        type: DataTypes.BOOLEAN,
-        defaultValue: true
-    },
-    category: {
-      type: DataTypes.STRING,
-      defaultValue: "Personal"
-    }
+    // project_status: {
+    //     type: DataTypes.BOOLEAN,
+    //     defaultValue: true
+    // },
+    // category: {
+    //   type: DataTypes.STRING,
+    //   defaultValue: "Personal"
+    // }
   });
   return Post;
 };

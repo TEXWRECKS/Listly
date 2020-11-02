@@ -21,10 +21,10 @@ module.exports = function(app) {
   });
 
   // Get route for returning posts of a specific category
-  app.get("/api/posts/category/:category", function(req, res) {
+  app.get("/api/posts/urgency/:urgency", function(req, res) {
     db.Post.findAll({
       where: {
-        category: req.params.category
+        urgency: req.params.urgency
       }
     })
       .then(function(dbPost) {
@@ -47,11 +47,9 @@ module.exports = function(app) {
   // POST route for saving a new post
   app.post("/api/posts", function(req, res) {
     console.log('this is the blog post', req.body);
-    db.Post.create({
-      title: req.body.title,
-      body: req.body.body,
-      category: req.body.category
-    })
+    db.Post.create(
+      req.body
+    )
       .then(function(dbPost) {
         res.json(dbPost);
       });
