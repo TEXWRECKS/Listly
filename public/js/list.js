@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
   // listContainer holds all of our posts
   var listContainer = $(".list-container");
   var postCategorySelect = $("#category");
@@ -14,7 +14,7 @@ $(document).ready(function () {
     if (categoryString) {
       categoryString = "/category/" + categoryString;
     }
-    $.get("/api/posts" + categoryString, function (data) {
+    $.get("/api/posts" + categoryString, function(data) {
       console.log("Posts", data);
       posts = data;
       if (!posts || !posts.length) {
@@ -32,7 +32,7 @@ $(document).ready(function () {
       method: "DELETE",
       url: "/api/posts/" + id
     })
-      .then(function () {
+      .then(function() {
         getPosts(postCategorySelect.val());
       });
   }
@@ -57,37 +57,34 @@ $(document).ready(function () {
     var newPostCardHeading = $("<div>");
     newPostCardHeading.addClass("card-header");
     var deleteBtn = $("<button>");
-    deleteBtn.text("✔️");
+    deleteBtn.text("x");
     deleteBtn.addClass("delete btn btn-danger");
     var editBtn = $("<button>");
     editBtn.text("EDIT");
     editBtn.addClass("edit btn btn-default");
     var newPostTitle = $("<h2>");
-    newPostTitle.addClass("title");
     var newPostDate = $("<small>");
-    newPostDate.addClass("date");
     var newPostCategory = $("<h5>");
-    newPostCategory.addClass("category")
     newPostCategory.text(post.category);
     newPostCategory.css({
-      float: "right"
+      float: "right",
+      "font-weight": "700",
+      "margin-top":
+      "-15px"
     });
     var newPostCardBody = $("<div>");
     newPostCardBody.addClass("card-body");
-    newPostCardBody.append(deleteBtn);
-    newPostCardBody.append(editBtn);
     var newPostBody = $("<p>");
     newPostTitle.text(post.title + " ");
     newPostBody.text(post.body);
     var formattedDate = new Date(post.createdAt);
-    formattedDate = moment(formattedDate).format("MMMM Do , YYYY");
+    formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
     newPostDate.text(formattedDate);
     newPostTitle.append(newPostDate);
-    newPostTitle.append(newPostCategory);
-
-
+    newPostCardHeading.append(deleteBtn);
+    newPostCardHeading.append(editBtn);
     newPostCardHeading.append(newPostTitle);
-    // newPostCardHeading.append(newPostCategory);
+    newPostCardHeading.append(newPostCategory);
     newPostCardBody.append(newPostBody);
     newPostCard.append(newPostCardHeading);
     newPostCard.append(newPostCardBody);
