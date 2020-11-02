@@ -1,4 +1,22 @@
 $(document).ready(function() {
+
+  // API call for random quote
+  const settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://rapidapi.p.rapidapi.com/?cat=famous&count=1",
+    "method": "POST",
+    "headers": {
+      "x-rapidapi-key": "f86a554f3bmsh110a109aec20174p15e8f3jsn57a3f8c92af2",
+      "x-rapidapi-host": "andruxnet-random-famous-quotes.p.rapidapi.com"
+    }
+  };
+  
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+  });
+
+
   // listContainer holds all of our posts
   var listContainer = $(".list-container");
   var postUrgencySelect = $("#urgency");
