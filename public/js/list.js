@@ -1,20 +1,22 @@
 $(document).ready(function() {
   // listContainer holds all of our posts
   var listContainer = $(".list-container");
-  var postCategorySelect = $("#category");
+  var postUrgencySelect = $("#urgency");
   // Click events for the edit and delete buttons
   $(document).on("click", "button.delete", handlePostDelete);
   $(document).on("click", "button.edit", handlePostEdit);
-  postCategorySelect.on("change", handleCategoryChange);
+  postUrgencySelect.on("change", handleUrgencyChange);
   var posts;
+  var dueDate;
+  
 
   // This function grabs posts from the database and updates the view
-  function getPosts(category) {
-    var categoryString = category || "";
-    if (categoryString) {
-      categoryString = "/category/" + categoryString;
+  function getPosts(urgency) {
+    var urgencyString = urgency || "";
+    if (urgencyString) {
+      urgencyString = "/urgency/" + urgencyString;
     }
-    $.get("/api/posts" + categoryString, function(data) {
+    $.get("/api/posts" + urgencyString, function(data) {
       console.log("Posts", data);
       posts = data;
       if (!posts || !posts.length) {
@@ -33,7 +35,7 @@ $(document).ready(function() {
       url: "/api/posts/" + id
     })
       .then(function() {
-        getPosts(postCategorySelect.val());
+        getPosts(postUrgencySelect.val());
       });
   }
 
@@ -52,6 +54,15 @@ $(document).ready(function() {
 
   // This function constructs a post's HTML
   function createNewRow(post) {
+    if (post.urgency === "low"){
+    dueDate = 120;
+  }
+    else if (post.urgency === "medium"){
+      dueDate = 60;
+    }
+    else if (post.urgency === "high"){
+      dueDate = 30;
+    }
     var newPostCard = $("<div>");
     newPostCard.addClass("card");
     var newPostCardHeading = $("<div>");
@@ -64,9 +75,9 @@ $(document).ready(function() {
     editBtn.addClass("edit btn btn-default");
     var newPostTitle = $("<h2>");
     var newPostDate = $("<small>");
-    var newPostCategory = $("<h5>");
-    newPostCategory.text(post.category);
-    newPostCategory.css({
+    var newPostUrgency = $("<h5>");
+    newPostUrgency.text(post.urgency);
+    newPostUrgency.css({
       float: "right",
       "font-weight": "700",
       "margin-top":
@@ -84,7 +95,7 @@ $(document).ready(function() {
     newPostCardHeading.append(deleteBtn);
     newPostCardHeading.append(editBtn);
     newPostCardHeading.append(newPostTitle);
-    newPostCardHeading.append(newPostCategory);
+    newPostCardHeading.append(newPostUrgency);
     newPostCardBody.append(newPostBody);
     newPostCard.append(newPostCardHeading);
     newPostCard.append(newPostCardBody);
@@ -117,14 +128,14 @@ $(document).ready(function() {
     listContainer.empty();
     var messageH2 = $("<h2>");
     messageH2.css({ "text-align": "center", "margin-top": "50px" });
-    messageH2.html("No list yet for this category, navigate <a href='/todo'>here</a> in order to create a new list.");
+    messageH2.html("No list yet for this urgency, navigate <a href='/todo'>here</a> in order to create a new list.");
     listContainer.append(messageH2);
   }
 
-  // This function handles reloading new posts when the category changes
-  function handleCategoryChange() {
-    var newPostCategory = $(this).val();
-    getPosts(newPostCategory);
+  // This function handles reloading new posts when the urgency changes
+  function handleUrgencyChange() {
+    var newPostUrgency = $(this).val();
+    getPosts(newPostUrgency);
   }
 
 });
