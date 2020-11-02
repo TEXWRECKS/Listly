@@ -1,7 +1,6 @@
 {
   "name": "blog-crud",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,8 +11,19 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.3",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
     "mysql2": "^1.6.4",
-    "sequelize": "^4.41.2"
-  }
+    "sequelize": "^4.44.4"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TEXWRECKS/project2-test.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TEXWRECKS/project2-test/issues"
+  },
+  "homepage": "https://github.com/TEXWRECKS/project2-test#readme",
+  "description": ""
 }
