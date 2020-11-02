@@ -67,3 +67,61 @@ color: white;
 td, th {
   background-color: white;
 }
+
+/* emily's edits */
+.card {
+  margin: 10px;
+  margin-top: 20px;
+}
+
+/* .card-header {
+  padding-top: 30px;
+} */
+
+.title {
+  padding-top: 20px;
+}
+.edit {
+  background-color: white; 
+  color: black; 
+  border: .5px solid #ffac2b;
+float: right;
+width: 50px;
+padding: 5px;
+margin: 5px;
+}
+
+.edit:hover {
+  background-color: #ffac2b;
+  border: .5px solid #ffac2b;
+  color: white;
+  float: right;
+}
+
+.delete {
+  background-color: white; 
+  color: black; 
+  border: .5px solid #4CAF50;
+  float: right;
+  width: 50px;
+padding: 5px;
+margin: 5px;
+  
+}
+
+.delete:hover {
+  background-color: #4CAF50;
+  border: .5px solid #4CAF50;
+  color: white;
+  float: right;
+}
+
+.date {
+  margin-left: 220px;
+  font-size: 20px;
+}
+
+.category {
+  padding-top: 20px;
+  margin-right: 10px;
+}
