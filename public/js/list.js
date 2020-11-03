@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
   // listContainer holds all of our posts
   var listContainer = $(".list-container");
   var postUrgencySelect = $("#urgency");

@@ -1,3 +1,58 @@
+.navbar {
+  height: 60px;
+  background-color: #555;
+  display: block;
+}
+
+.active {
+  width: 70px;
+  vertical-align: center;
+  float: left;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+  background-color: black;
+  margin-right: 15px;
+}
+
+.navbar .active:hover {
+  background-color: black;
+  color: white;
+}
+
+.other {
+  width: 70px;
+  vertical-align: center;
+  float: left;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+  background-color: tan;
+  margin-left: 15px;
+}
+
+.navbar .other:hover {
+  background-color: black;
+  color: white;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+
 body {
   /* background-image: url(../img/Start\ Page\ Background.jpg); */
   /* background-size: cover;
@@ -58,11 +113,6 @@ color: white;
   background-color: #18d068;
 color: white;
 }
-
-/* .project-owner-emily {
-  background-image: url(../img/Headshot_EGA.jpg);
-  size: 10%;
-} */
 
 .fa-plus-square {
   color: #18d068
@@ -185,3 +235,16 @@ a {
   border-radius: 5px;
   font-size: 25px;
 }
+
+@media screen and (max-width: 768px) {
+  /* The body's bg color will be #333 */
+  body {
+    background-color: #333;
+  }
+  
+    /* The wrapper's width will be 600px */
+    .wrapper {
+      width: 100%;
+    }
+  }
+
