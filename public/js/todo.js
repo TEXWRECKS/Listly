@@ -17,10 +17,7 @@ $(document).ready(function() {
   var titleInput = $("#title");
   var todoForm = $("#todo");
   var projectUrgency = $("#urgency");
-  // var projectStatus = $("status");
-  // var postCategorySelect = $("#category");
-  // Giving the postCategorySelect a default value
-  // postUrgencySelect.val("Low");
+
   // Adding an event listener for when the form is submitted
   $(todoForm).on("submit", function handleFormSubmit(event) {
     event.preventDefault();
@@ -33,8 +30,6 @@ $(document).ready(function() {
       title: titleInput.val().trim(),
       body: bodyInput.val().trim(),
       urgency: projectUrgency.val(),
-      // status: projectStatus.val(),
-      // category: postCategorySelect.val()
     };
 
     console.log(newPost);
@@ -65,8 +60,6 @@ $(document).ready(function() {
         titleInput.val(data.title);
         bodyInput.val(data.body);
         projectUrgency.val(data.urgency);
-        // projectStatus.val(data.status);
-        // postCategorySelect.val(data.category);
         // If we have a post with this id, set a flag for us to know to update the post
         // when we hit submit
         updating = true;

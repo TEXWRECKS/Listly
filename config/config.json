@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "Love.0980",
-    "database": "blogger",
+    "password": "Fritos76",
+    "database": "projects_db",
     "host": "localhost",
     "port": 3306,
     "dialect": "mysql"

@@ -18,14 +18,6 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       defaultValue: "low"
     },
-    // project_status: {
-    //     type: DataTypes.BOOLEAN,
-    //     defaultValue: true
-    // },
-    // category: {
-    //   type: DataTypes.STRING,
-    //   defaultValue: "Personal"
-    // }
   });
   return Post;
 };
